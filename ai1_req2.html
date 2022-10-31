@@ -8,13 +8,50 @@
     <title>AI1 requerimiento 2</title>
 
     <script type="text/javascript">
+        function procesarPedido(){
 
+        // VALIDAR LOS CAMPOS DE TEXTO. TODOS TIENEN TEXTO
+
+
+
+
+
+        // VALIDAR EL TAMAÑO DE PIZZA. SE HA ELEGIDO AL MENOS UNO
+
+
+
+
+
+         //VALIDAR LOS INGREDIENTES. SE HA ELEGIDO AL MENOS UNO
+         ingredientes = document.getElementsByName("ingredientes");
+                var ingelegido = false;
+                    for(var i=0; i<ingredientes.length; i++) {
+                        if(ingredientes[i].checked) {
+                            ingelegido = true;
+                            break;
+                        }
+                    }
+                    
+        if(!ingelegido) {
+            alert('ATENCIÓN!! DEBES ELEGIR AL MENOS UN INGREDIENTE');
+            return false;
+        }
+
+
+
+
+
+        // SUMA TOTAL DEL PEDIDO
+
+
+        }
     </script>
 </head>
 
 <body>
 
 <!-- INICIO FORMULARIO-->
+<form name="formulario2" id="formulario2" action="urlServidor" method="get">
 
     <!-- Campos tipo texto: NOMBRE, DIRECCION, TELEFONO, EMAIL-->
 
@@ -29,18 +66,21 @@
 
 
     <!-- 4 Checkbox con los diferentes ingredientes de la pizza-->
-
+        <h4>Ingredientes (se suma +1€ por ingrediente)</h4>
+        <input type="checkbox" name="ingredientes" id="Jamon" value="1"> Jamon
+        <input type="checkbox" name="ingredientes" id="Pollo" value="1"> Pollo
+        <input type="checkbox" name="ingredientes" id="Cebolla" value="1"> Cebolla
+        <input type="checkbox" name="ingredientes" id="Extra_queso" value="1"> Extra de Queso
+        <div id="verificaIngredientes"></div>
 
 
 
 
 <!-- FIN FORMULARIO-->
+</form>
 
 <!-- Un botón de procesar el pedido-->
-
-
-
-
+<button id="validar" onclick="procesarPedido()">Procesar el pedido</button>
 
 <!-- Total del pedido-->
 
