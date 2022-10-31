@@ -8,17 +8,149 @@
     <title>AI1 requerimiento 1</title>
 
     <script type="text/javascript">
+
+window.onload = function(){
+        
+    //Creamos el nodo formulario y sus atributos
+        let formulario = document.createElement("form")
+            formulario.setAttribute("name", "formulario")
+            formulario.setAttribute("id", "formulario")
+            formulario.setAttribute("action","urlServidor")
+            formulario.setAttribute("method","get")
+
+    //Creamos el nodo de salto de linea que nos permite ver el formulario en lineas diferentes.
+        let saltolinea = document.createElement("br");
+      
     //•	Campos de texto donde poner el DNI, el nombre y los apellidos, la dirección y el teléfono
+        let dni = document.createElement("input")
+                dni.setAttribute("id", "dni")
+                dni.setAttribute("type", "text")
+                dni.setAttribute("name", "dni")
+                dni.setAttribute("placeholder","dni con letra")
+                formulario.appendChild(dni) // Añadimos el nodo dni al nodo form.
+                formulario.appendChild(saltolinea.cloneNode())
+
+            let nombre = document.createElement("input")
+                nombre.setAttribute("id", "nombre")
+                nombre.setAttribute("type", "text")
+                nombre.setAttribute("name", "Nombre y apellidos")
+                nombre.setAttribute("placeholder","Nombre y Apellidos")
+                formulario.appendChild(nombre)
+                formulario.appendChild(saltolinea.cloneNode())
 
 
+            let direccion = document.createElement("input")
+                direccion.setAttribute("id", "direccion")
+                direccion.setAttribute("label", "Direccion")
+                direccion.setAttribute("type", "text")
+                direccion.setAttribute("name", "Direccion")
+                direccion.setAttribute("placeholder","Dirección Completa")
+                formulario.appendChild(direccion) // Añadimos el nodo direccion al nodo form.
+                formulario.appendChild(saltolinea.cloneNode())
 
-
+            let telefono = document.createElement("input")
+                telefono.setAttribute("id", "telefono")
+                telefono.setAttribute("type", "text")
+                telefono.setAttribute("name", "Telefono")
+                telefono.setAttribute("placeholder","Teléfono")
+                formulario.appendChild(telefono) // Añadimos el nodo telefono al nodo form.
+                formulario.appendChild(saltolinea.cloneNode())
+    
+    formulario.appendChild(saltolinea.cloneNode())
 
     //•	Dos radio button, con 4 opciones a elegir
+        //1er Radio Button    
+        let fieldset1 =document.createElement ("fieldset")
+            let legend1 = document.createElement ("legend")
+            let legendname1 =document.createTextNode ("Primer radio button con 4 opciones")
+            legend1.appendChild(legendname1)
+            
+            let radio1 = document.createElement("input")
+                let radio1name = document.createTextNode("Rojo")
+                    radio1.setAttribute("type","radio")
+                    radio1.setAttribute("value","rojo")
+                    radio1.setAttribute("name","colores")
+                    radio1.setAttribute("id","color_rojo")
+                    fieldset1.appendChild(radio1)
+                    fieldset1.appendChild(radio1name)
+
+            let radio2 = document.createElement("input")
+                let radio2name = document.createTextNode("Azul")
+                    radio2.setAttribute("type","radio")
+                    radio2.setAttribute("value","azul")
+                    radio2.setAttribute("name","colores")
+                    radio2.setAttribute("id","color_azul")
+                    fieldset1.appendChild(radio2)
+                    fieldset1.appendChild(radio2name)
+            
+            let radio3 = document.createElement("input")
+                let radio3name = document.createTextNode("Verde")
+                    radio3.setAttribute("type","radio")
+                    radio3.setAttribute("value","verde")
+                    radio3.setAttribute("name","colores")
+                    radio3.setAttribute("id","color_verde")
+                    fieldset1.appendChild(radio3)
+                    fieldset1.appendChild(radio3name)
+
+            let radio4 = document.createElement("input")
+                let radio4name = document.createTextNode("Amarillo")
+                    radio4.setAttribute("type","radio")
+                    radio4.setAttribute("value","Amarillo")
+                    radio4.setAttribute("name","colores")
+                    radio4.setAttribute("id","color_Amarillo")
+                    fieldset1.appendChild(radio4)
+                    fieldset1.appendChild(radio4name)
 
 
+        fieldset1.appendChild(legend1)
+        formulario.appendChild(fieldset1)     
+        
+        //2do Radio Button    
+            let fieldset1_1 =document.createElement ("fieldset")
+            let legend1_1 = document.createElement ("legend")
+            let legendname1_1 =document.createTextNode ("Segundo radio button con 4 opciones")
+            legend1_1.appendChild(legendname1_1)
+            
+            let radio1_1 = document.createElement("input")
+                let radio1_1name = document.createTextNode("Par")
+                    radio1_1.setAttribute("type","radio")
+                    radio1_1.setAttribute("value","par")
+                    radio1_1.setAttribute("name","ruleta")
+                    radio1_1.setAttribute("id","par")
+                    fieldset1_1.appendChild(radio1_1)
+                    fieldset1_1.appendChild(radio1_1name)
+
+            let radio2_1 = document.createElement("input")
+                let radio2_1name = document.createTextNode("Impar")
+                    radio2_1.setAttribute("type","radio")
+                    radio2_1.setAttribute("value","impar")
+                    radio2_1.setAttribute("name","ruleta")
+                    radio2_1.setAttribute("id","impar")
+                    fieldset1_1.appendChild(radio2_1)
+                    fieldset1_1.appendChild(radio2_1name)
+            
+            let radio3_1 = document.createElement("input")
+                let radio3_1name = document.createTextNode("Negras")
+                    radio3_1.setAttribute("type","radio")
+                    radio3_1.setAttribute("value","negras")
+                    radio3_1.setAttribute("name","ruleta")
+                    radio3_1.setAttribute("id","negras")
+                    fieldset1_1.appendChild(radio3_1)
+                    fieldset1_1.appendChild(radio3_1name)
+
+            let radio4_1 = document.createElement("input")
+                let radio4_1name = document.createTextNode("Rojas")
+                    radio4_1.setAttribute("type","radio")
+                    radio4_1.setAttribute("value","rojas")
+                    radio4_1.setAttribute("name","ruleta")
+                    radio4_1.setAttribute("id","rojas")
+                    fieldset1_1.appendChild(radio4_1)
+                    fieldset1_1.appendChild(radio4_1name)
 
 
+        fieldset1_1.appendChild(legend1_1)
+        formulario.appendChild(fieldset1_1)     
+    formulario.appendChild(saltolinea.cloneNode())
 
     //•	Cinco checkbox diferentes
 
@@ -39,6 +171,27 @@
 
 
     //•	Un text area
+
+
+
+
+
+
+     //Botón enviar
+    let enviar =document.createElement("input")
+            enviar.setAttribute("type", "submit")
+            enviar.setAttribute("value", "Enviar")
+
+
+        formulario.appendChild(saltolinea.cloneNode())
+        formulario.appendChild(saltolinea.cloneNode())
+        formulario.appendChild(enviar)
+
+
+    // Añadimos el formulario al DIV
+        divPrincipal.appendChild(formulario)
+    }
+
 
     </script>
 </head>
