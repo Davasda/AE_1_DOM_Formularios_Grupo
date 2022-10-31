@@ -10,7 +10,14 @@
     <script type="text/javascript">
 
 window.onload = function(){
-        
+    //Ponemos un titulo
+
+        let h1 = document.createElement("h1");
+        let tituloFormulario = document.createTextNode("Requerimiento 1: Formulario");
+            divPrincipal.appendChild(h1);
+            h1.appendChild (tituloFormulario);
+
+
     //Creamos el nodo formulario y sus atributos
         let formulario = document.createElement("form")
             formulario.setAttribute("name", "formulario")
