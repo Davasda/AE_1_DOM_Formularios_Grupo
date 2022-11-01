@@ -12,6 +12,33 @@
 
         // VALIDAR LOS CAMPOS DE TEXTO. TODOS TIENEN TEXTO
 
+            const nDni = document.getElementById("DNI")
+            const nNombre = document.getElementById("Nombre")
+            const nApellido = document.getElementById("Apellido")
+            const nTelefono = document.getElementById("Telefono")
+            const nDireccion = document.getElementById("Direccion")
+            
+                if (nDni.value.trim() == "") {
+                    // Si no se cumple la condicion...
+                    alert('[ERROR] El campo DNI debe estar relleno');
+                    return false;
+                } if (nNombre.value.trim() == "") {
+                    // Si no se cumple la condicion...
+                    alert('[ERROR] El campo Nombre debe estar relleno');
+                    return false;
+                } if (nApellido.value.trim() == "") {
+                    // Si no se cumple la condicion...
+                    alert('[ERROR] El campo Apellido debe estar relleno');
+                    return false;
+                } if (nDireccion.value.trim() == "") {
+                    // Si no se cumple la condicion...
+                    alert('[ERROR] El campo Direccion debe estar relleno');
+                    return false;
+                } if (nTelefono.value.trim() == "") {
+                    // Si no se cumple la condicion...
+                    alert('[ERROR] El campo Telefono debe estar relleno');
+                    return false;
+                    }
 
 
 
@@ -35,6 +62,7 @@
 
 
          //VALIDAR LOS INGREDIENTES. SE HA ELEGIDO AL MENOS UNO
+
          ingredientes = document.getElementsByName("ingredientes");
                 var ingelegido = false;
                     for(var i=0; i<ingredientes.length; i++) {
@@ -51,36 +79,43 @@
 
 
         // SUMA TOTAL DEL PEDIDO
-        
-        function precioTotal(){
+            var total=0
+            var totalTam =0
 
-        var precio = 0
+        //Calculamos el importe según el tamaño de la pizza 
 
+            console.log("Calculando importe tamaño pizza")
+            var tam = document.getElementsByName('tamano');
+                for(i = 0; i < tam.length; i++) { 
+                            if(tam[i].checked) 
+                                totalTam=parseInt(tam[i].value)
+                }
+            console.log(totalTam)
 
-
-        }
-
-
-
-
-        var precio = 0;
-        var ingredElegidos = document.getElementByName("ingredientes")
-
-        if(tam_g.checked){
-            precio = 15
-        } else if (tam_m.checked){
-            precio = 10
-        } else if (tam_p.checked){
-            precio = 5
-        }
-
-        for(var i=0; i<ingred.length; i++){
-            if(ingredElegidos[i].checked){
-            precio ++;
+            console.log("Calculando importe ingredientes")
+            var totalIng =0 
+            var ingrediente = document.getElementsByName('ingredientes');
+            var arrayingred = ingrediente.length
+            var ing=0 
+            console.log(ingrediente)
+            console.log (arrayingred)
+  
+            for (x=0; x<arrayingred;x++){
+                if (ingrediente[x].checked){
+                totalIng=totalIng+1
+                }
             }
-        }
 
+            console.log("Total Ingredientes")    
+            console.log(totalIng)
+
+            total = totalTam+totalIng
+            
+            totalPedido.innerHTML = "<h4 align='left'>Total Pedido:</h2>" + total
+            console.log(total)
+            console.log("validando el pedido FIN")
     }
+        
     </script>
 </head>
 
@@ -90,17 +125,20 @@
 <form name="formulario2" id="formulario2" action="urlServidor" method="get">
 
     <!-- Campos tipo texto: NOMBRE, DIRECCION, TELEFONO, EMAIL-->
-
-
+        <h4>Porfavor, Introduzca sus datos</h4>
+        <input type="text" id="DNI" name="Dato" placeholder="Ej: 84952865X"> DNI <br>
+        <input type="text" id="Nombre" name="Dato" placeholder="Ej: Luis"> Nombre <br>
+        <input type="text" id="Apellido" name="Dato" placeholder="Ej: De Miñón"> Apellido <br>
+        <input type="text" id="Telefono" name="Dato" placeholder="Ej: 648769265"> Telefono <br>
+        <input type="text" id="Direccion" name="Dato" placeholder="Ej: Avda. Correcaminos 22"> Direccion <br> 
 
 
 
     <!-- Un radio button con el tamaño de la pizza, pudiendo ser pequeña, mediana o grande-->
-
         <h4>¿Qué tamaño te gustaria?</h4>
-        <input type="radio" name="tamano" value="G" id="tam_g" />Grande<br />
-        <input type="radio" name="tamano" value="M" id="tam_m" checked required />Mediana<br />
-        <input type="radio" name="tamano" value="P" id="tam_p" />Pequeña<br />
+        <input type="radio" name="tamano" value="15" id="tam_g" />Grande 15€<br />
+        <input type="radio" name="tamano" value="10" id="tam_m" />Mediana 10€<br />
+        <input type="radio" name="tamano" value="5" id="tam_p" />Pequeña 5€<br />
         <div id="verificaTamano"></div>
 
 
@@ -112,19 +150,16 @@
         <input type="checkbox" name="ingredientes" id="Extra_queso" value="1"> Extra de Queso
         <div id="verificaIngredientes"></div>
 
-
-
-
 <!-- FIN FORMULARIO-->
 </form>
-
+<p></p>
 <!-- Un botón de procesar el pedido-->
 <button id="validar" onclick="procesarPedido()">Procesar el pedido</button>
 
-<!-- Total del pedido-->
+<!--RESULTADO DEL PEDIDO-->
 
-
-
+<div id="totalPedido"></div>
+<div id="result"></div> 
 
 
 </body >
