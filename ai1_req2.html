@@ -51,6 +51,24 @@
 
         // SUMA TOTAL DEL PEDIDO
 
+        function precioPedido(){
+
+        var precio = 0;
+        var ingredElegidos = document.getElementByName("ingredientes")
+
+        if(tam_g.checked){
+            precio = 15
+        } else if (tam_m.checked){
+            precio = 10
+        } else if (tam_p.checked){
+            precio = 5
+        }
+
+        for(var i=0; i<ingred.length; i++){
+            if(ingredElegidos[i].checked){
+            precio ++;
+        }
+    }
 
         }
     </script>
