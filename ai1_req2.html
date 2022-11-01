@@ -17,8 +17,19 @@
 
 
         // VALIDAR EL TAMAÑO DE PIZZA. SE HA ELEGIDO AL MENOS UNO
+        
+        tamano = document.getElementsByName("tamano");
+            var tamElegido = false;
+                for (var i=0; i<tamano.length;i++){
+                    if(tamano[i].checked){
+                        tamElegido = true;
+                }
+            }
 
-
+            if (!ingelegido) {
+            alert('SERIA IMPORTANTE SABER EL TAMAÑO QUE PREFIERES HOY');
+            return false;
+            }
 
 
 
@@ -36,9 +47,6 @@
             alert('ATENCIÓN!! DEBES ELEGIR AL MENOS UN INGREDIENTE');
             return false;
         }
-
-
-
 
 
         // SUMA TOTAL DEL PEDIDO
@@ -61,8 +69,11 @@
 
     <!-- Un radio button con el tamaño de la pizza, pudiendo ser pequeña, mediana o grande-->
 
-
-
+        <h4>¿Qué tamaño te gustaria?</h4>
+        <input type="radio" name="tamano" value="G" id="tam_g" />Grande<br />
+        <input type="radio" name="tamano" value="M" id="tam_m" checked required />Mediana<br />
+        <input type="radio" name="tamano" value="P" id="tam_p" />Pequeña<br />
+        <div id="verificaTamano"></div>
 
 
     <!-- 4 Checkbox con los diferentes ingredientes de la pizza-->
