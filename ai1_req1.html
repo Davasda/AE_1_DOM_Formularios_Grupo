@@ -12,10 +12,10 @@
 window.onload = function(){
     //Ponemos un titulo
 
-        let h1 = document.createElement("h1");
-        let tituloFormulario = document.createTextNode("Requerimiento 1: Formulario");
-            divPrincipal.appendChild(h1);
-            h1.appendChild (tituloFormulario);
+        let h1 = document.createElement("h1")
+        let tituloFormulario = document.createTextNode("Requerimiento 1: Formulario")
+            divPrincipal.appendChild(h1)
+            h1.appendChild (tituloFormulario)
 
 
     //Creamos el nodo formulario y sus atributos
@@ -172,7 +172,47 @@ window.onload = function(){
 
 
     //•	Un campo select
+        let fieldset7 = document.createElement ("fieldset")
+        let legend7 = document.createElement ("legend")
+        let legendname7 = document.createTextNode ("Campo select")
 
+        fieldset7.appendChild(legend7)
+        legend7.appendChild(legendname7)
+    
+
+            let select = document.createElement ("select")
+            fieldset7.appendChild(select)
+
+            let option1 = document.createElement("option")
+            option1.setAttribute("value", "value1")
+            let option1Text = document.createTextNode("Ferrari")
+            option1.appendChild(option1Text)
+
+
+            let option2 = document.createElement("option")
+            option2.setAttribute("value", "value2")
+            let option2Text = document.createTextNode("Lamborghini")
+            option2.appendChild(option2Text)
+
+
+            let option3 = document.createElement("option")
+            option3.setAttribute("value", "value3")
+            let option3Text = document.createTextNode("Bugatti")
+            option3.appendChild(option3Text)
+
+
+            let option4 = document.createElement("option")
+            option4.setAttribute("value", "value4")
+            let option4Text = document.createTextNode("Porsche")
+            option4.appendChild(option4Text)
+            
+            select.appendChild(option1)
+            select.appendChild(option2)
+            select.appendChild(option3)
+            select.appendChild(option4)
+
+            fieldset7.appendChild(legend7)
+        formulario.appendChild(fieldset7)
 
 
 
@@ -185,7 +225,7 @@ window.onload = function(){
 
 
      //Botón enviar
-    let enviar =document.createElement("input")
+    let enviar = document.createElement("input")
             enviar.setAttribute("type", "submit")
             enviar.setAttribute("value", "Enviar")
 
@@ -197,6 +237,7 @@ window.onload = function(){
 
     // Añadimos el formulario al DIV
         divPrincipal.appendChild(formulario)
+
     }
 
 
