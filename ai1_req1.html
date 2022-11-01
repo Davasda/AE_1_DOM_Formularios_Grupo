@@ -16,8 +16,8 @@ window.onload = function(){
         let tituloFormulario = document.createTextNode("Requerimiento 1: Formulario")
             divPrincipal.appendChild(h1)
             h1.appendChild (tituloFormulario)
-
-
+ 
+           
     //Creamos el nodo formulario y sus atributos
         let formulario = document.createElement("form")
             formulario.setAttribute("name", "formulario")
@@ -218,10 +218,19 @@ window.onload = function(){
 
 
     //•	Un text area
+    let fieldset8 = document.createElement("fieldset");
+        let legend8 = document.createElement("legend"); 
+        let legend8Text = document.createTextNode("Textarea"); 
 
+        fieldset8.appendChild(legend8); 
+        legend8.appendChild(legend8Text); 
 
+        let textarea = document.createElement("textarea");
+        fieldset8.appendChild(textarea);
+        textarea.placeholder="Escribe aquí el texto";
 
-
+        fieldset8.appendChild(legend8)
+        formulario.appendChild(fieldset8)
 
 
      //Botón enviar
