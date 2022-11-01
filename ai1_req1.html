@@ -110,7 +110,8 @@ window.onload = function(){
 
 
         fieldset1.appendChild(legend1)
-        formulario.appendChild(fieldset1)     
+        formulario.appendChild(fieldset1) 
+        formulario.appendChild(saltolinea.cloneNode())    
         
         //2do Radio Button    
             let fieldset1_1 =document.createElement ("fieldset")
@@ -164,12 +165,14 @@ window.onload = function(){
 
 
 
+    formulario.appendChild(saltolinea.cloneNode())
 
     //•	2 imágenes
     
 
 
 
+    formulario.appendChild(saltolinea.cloneNode())
 
     //•	Un campo select
         let fieldset7 = document.createElement ("fieldset")
@@ -213,7 +216,7 @@ window.onload = function(){
 
             fieldset7.appendChild(legend7)
         formulario.appendChild(fieldset7)
-
+        formulario.appendChild(saltolinea.cloneNode())
 
 
 
@@ -240,7 +243,7 @@ window.onload = function(){
 
 
         formulario.appendChild(saltolinea.cloneNode())
-        formulario.appendChild(saltolinea.cloneNode())
+
         formulario.appendChild(enviar)
 
 
@@ -248,7 +251,6 @@ window.onload = function(){
         divPrincipal.appendChild(formulario)
 
     }
-
 
     </script>
 </head>
