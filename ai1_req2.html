@@ -23,10 +23,11 @@
                 for (var i=0; i<tamano.length;i++){
                     if(tamano[i].checked){
                         tamElegido = true;
+                        break;
                 }
             }
 
-            if (!ingelegido) {
+            if (!tamElegido) {
             alert('SERIA IMPORTANTE SABER EL TAMAÑO QUE PREFIERES HOY');
             return false;
             }
@@ -50,6 +51,8 @@
 
 
         // SUMA TOTAL DEL PEDIDO
+
+
 
 
         }
