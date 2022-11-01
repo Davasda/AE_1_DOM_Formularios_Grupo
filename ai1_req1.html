@@ -66,52 +66,28 @@ window.onload = function(){
     formulario.appendChild(saltolinea.cloneNode())
 
     //•	Dos radio button, con 4 opciones a elegir
+    
         //1er Radio Button    
-        let fieldset1 =document.createElement ("fieldset")
-            let legend1 = document.createElement ("legend")
-            let legendname1 =document.createTextNode ("Primer radio button con 4 opciones")
-            legend1.appendChild(legendname1)
-            
-            let radio1 = document.createElement("input")
-                let radio1name = document.createTextNode("Rojo")
-                    radio1.setAttribute("type","radio")
-                    radio1.setAttribute("value","rojo")
-                    radio1.setAttribute("name","colores")
-                    radio1.setAttribute("id","color_rojo")
-                    fieldset1.appendChild(radio1)
-                    fieldset1.appendChild(radio1name)
-
-            let radio2 = document.createElement("input")
-                let radio2name = document.createTextNode("Azul")
-                    radio2.setAttribute("type","radio")
-                    radio2.setAttribute("value","azul")
-                    radio2.setAttribute("name","colores")
-                    radio2.setAttribute("id","color_azul")
-                    fieldset1.appendChild(radio2)
-                    fieldset1.appendChild(radio2name)
-            
-            let radio3 = document.createElement("input")
-                let radio3name = document.createTextNode("Verde")
-                    radio3.setAttribute("type","radio")
-                    radio3.setAttribute("value","verde")
-                    radio3.setAttribute("name","colores")
-                    radio3.setAttribute("id","color_verde")
-                    fieldset1.appendChild(radio3)
-                    fieldset1.appendChild(radio3name)
-
-            let radio4 = document.createElement("input")
-                let radio4name = document.createTextNode("Amarillo")
-                    radio4.setAttribute("type","radio")
-                    radio4.setAttribute("value","Amarillo")
-                    radio4.setAttribute("name","colores")
-                    radio4.setAttribute("id","color_Amarillo")
-                    fieldset1.appendChild(radio4)
-                    fieldset1.appendChild(radio4name)
-
-
-        fieldset1.appendChild(legend1)
-        formulario.appendChild(fieldset1) 
-        formulario.appendChild(saltolinea.cloneNode())    
+        let fieldset1 =document.createElement ("fieldset") //Creamos el nodo fieldset que contenga los radio option
+        let legend1 = document.createElement ("legend")//Creamos el nodo legend que contendra el nombre
+        let legendname1 =document.createTextNode ("Primer radio button con 4 opciones") //creamos el nodo texto para asignar al legend
+        legend1.appendChild(legendname1) //Asignamos el nodo legendname1 al legend.
+        let colores = ["Rojo", "Azul", "Verde", "Amarillo"] //Creamos el array con los colores para asignar a los radio button
+        //Creamos un for para crear los radio button
+        for (var c=0; c<colores.length; c++){
+            let radio1 = document.createElement("input")//Definimos el nodo Radio 1
+            radio1.setAttribute("type", "radio") //añadimos el atributo tipo radio a Radio 1
+            radio1.setAttribute("name", "colores")// Añadimos el atributo name a Radio 1
+            let radio1name = document.createTextNode(colores[c]) //Creamos los nodo texto con los nombres de los colores
+            let radio1value = document.createElement(colores[c]) //Creamos los nodo value con el valor de los colores 
+            radio1.setAttribute("value",colores[c])// Añadimos el atributo value al color correspondiente.
+            formulario.appendChild(saltolinea)// Añadimos un salto de linea
+            fieldset1.appendChild(radio1)//Añadimos el nodo radio 1 al fieldset
+            fieldset1.appendChild(radio1name)// Añadimos los textos de las opciones
+            fieldset1.appendChild(legend1) // Añadimos el legend al fieldset
+            formulario.appendChild(fieldset1) // Añadimos el fieldset al formulario
+        }
+        formulario.appendChild(saltolinea.cloneNode())   
         
         //2do Radio Button    
             let fieldset1_1 =document.createElement ("fieldset")
@@ -162,13 +138,47 @@ window.onload = function(){
 
     //•	Cinco checkbox diferentes
 
+    let cabecera_cb = document.createElement("h4")
+           let cb_nombre = document.createTextNode("Cinco checkbox diferentes")
+            cabecera_cb.appendChild(cb_nombre)
+            formulario.appendChild(cabecera_cb)
 
+    let intereses = ["Peliculas", "Libros", "Cocina", "Pesca", "Deportes"] //Creamos el array 
 
-
-    formulario.appendChild(saltolinea.cloneNode())
+        for(var i=0; i<intereses.length; i++){
+            let input4 = document.createElement("input")//<input></input>
+            input4.setAttribute("type", "checkbox")//<input type="radio"></input>
+            input4.setAttribute("name", "intereses")//<input type="radio" name=sueldo></input>
+            let txt4 = document.createTextNode(intereses[i])//datos[i]
+            let salto = document.createElement("br")//<br>
+            formulario.appendChild(input4) //<form> <input type="radio" name=datos[i]> </input> </form>
+            formulario.appendChild(txt4)
+            formulario.appendChild(salto) //<form> <input type="text" name=datos[i]> datos[i] </input> <br> </form>
+        }
+        formulario.appendChild(saltolinea.cloneNode())
 
     //•	2 imágenes
-    
+        let fieldset1_3 =document.createElement ("fieldset")
+                let legend1_3 = document.createElement ("legend")
+                let legendname1_3 =document.createTextNode ("Dos Imagenes")
+                legend1_3.appendChild(legendname1_3)
+
+        let img1_1 = document.createElement("img")
+                        img1_1.setAttribute("src","imagenes/codificacion.png")
+                        img1_1.setAttribute("width","50")
+                        img1_1.setAttribute("height","50")
+                        fieldset1_3.appendChild(img1_1)
+                        fieldset1_3.appendChild(legend1_3)
+                        formulario.appendChild(fieldset1_3)     
+                        
+        let img1_2 = document.createElement("img")
+                        img1_2.setAttribute("src","imagenes/codificacion_1.png")
+                        img1_2.setAttribute("width","50")
+                        img1_2.setAttribute("height","50")
+                        fieldset1_3.appendChild(img1_2)
+                        fieldset1_3.appendChild(legend1_3)
+                        formulario.appendChild(fieldset1_3)   
+        formulario.appendChild(saltolinea.cloneNode())
 
 
 
